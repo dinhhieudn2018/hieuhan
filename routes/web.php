@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.client.master');
+});
+
+Route::group(['prefix' => 'admin'], function(){
+	// localhost/admin/...
+	Route::view('/','layout.admin.master')->name('admin.index');
+	Route::resource('service','ServiceController');
+	Route::resource('feedback','FeedbackController');
+	Route::resource('image','ImageController');
+	Route::resource('customer','CustomerController');
+
+	Route::get('destroy/{id}',"ServiceController@destroy")->name('destroy.service');
+	
 });
