@@ -2273,7 +2273,7 @@ th {
 .table > tfoot > tr > td {
   padding: 8px;
   line-height: 1.42857143;
-  vertical-align: top;
+  vertical-align: middle !important;
   border-top: 1px solid #ddd;
 }
 .table > thead > tr > th {
@@ -6753,5 +6753,8 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+.table > tbody > tr > td{
+  vertical-align: middle !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

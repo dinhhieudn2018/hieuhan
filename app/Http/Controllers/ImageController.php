@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Image;
+use App\Models\Image;
 use Illuminate\Http\Request;
-
+use File;
 class ImageController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::all();
+        return view('admin.image.index',compact('images'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.image.add');
     }
 
     /**
@@ -35,7 +36,31 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->hasFile('image')){
+            $file = $request->image;
+            // Lấy tên file
+            $file_name = $file->getClientOriginalName();
+            // Lấy loại file
+            $file_type = $file->getMimeType();
+            // Kích thước file với đơn vị byte
+            
+            if($file_type == 'image/png' || $file_type == 'image/jpg' || $file_type == 'image/jpeg' || $file_type == 'gif'){
+                $file_name = date('D_m_yyyy').'-'.str_slug($file_name);
+                if($file->move('upload/img',$file_name)){
+                    $data = $request->all();
+                    $data['image'] = $file_name;
+                    //dd($data);
+                    Image::create($data);
+                    return redirect()->route('image.index');
+                }
+            }
+            else{
+                return redirect()->back();
+            }
+        }
+        else{
+            return redirect()->back();
+        }
     }
 
     /**
@@ -55,9 +80,10 @@ class ImageController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function edit(Image $image)
+    public function edit($id)
     {
-        //
+        $image = Image::find($id);
+        return view('admin.image.edit',compact('image'));
     }
 
     /**
@@ -67,9 +93,37 @@ class ImageController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Image $image)
+    public function update(Request $request, $id)
     {
-        //
+        $image = Image::find($id);
+        $data = $request->all();
+        if($request->hasFile('image')){
+            $file = $request->image;
+            // Lấy tên file
+            $file_name = $file->getClientOriginalName();
+            // Lấy loại file
+            $file_type = $file->getMimeType();
+            // Kích thước file với đơn vị byte
+            //$file_size = $file->getSize();
+            if($file_type == 'image/png' || $file_type == 'image/jpg' || $file_type == 'image/jpeg' || $file_type == 'gif'){
+                $file_name = date('D_m_yyyy').'-'.str_slug($file_name);
+                if($file->move('upload/img',$file_name)){                  
+                    $data['image'] = $file_name;
+                    if(File::exists('upload/img'.$image->image)){
+                        //Xóa file
+                        unlink('upload/img'.$image->image);
+                    }
+                }
+            }
+            else{
+                return redirect()->back();
+            }
+        }else{
+            $data['image'] = $image->image;
+        }
+        if($image->update($data)){
+            return redirect()->route('image.index');
+        }
     }
 
     /**
@@ -78,8 +132,9 @@ class ImageController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function destroy($id)
     {
-        //
+        $img = Image::find($id)->delete();
+        return redirect()->route('image.index');
     }
 }

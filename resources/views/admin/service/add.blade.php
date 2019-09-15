@@ -1,5 +1,10 @@
 @extends('layout.admin.master')
-
+@section('sub-content')
+    Dịch vụ
+@endsection
+@section('action')
+    Thêm mới
+@endsection
 @section('content')
 	<div class="container" style="padding-top: 30px">
    <div class="col-lg-12" style="padding-bottom:120px">

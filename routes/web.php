@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::resource('image','ImageController');
 	Route::resource('customer','CustomerController');
 
-	Route::get('destroy/{id}',"ServiceController@destroy")->name('destroy.service');
-	
+	Route::get('svdestroy/{id}',"ServiceController@destroy")->name('destroy.service');
+	Route::get('fbdestroy/{id}',"FeedbackController@destroy")->name('feedback.destroy');
+	Route::get('imgdestroy/{id}',"ImageController@destroy")->name('img.destroy');
 });
