@@ -914,7 +914,8 @@ button.close {
 
 .bnr-rgt-w3-agile input[type="text"],
 .bnr-rgt-w3-agile input[type="email"],
-.bnr-rgt-w3-agile textarea {
+.bnr-rgt-w3-agile textarea,
+.bnr-rgt-w3-agile select{
 	outline: none;
 	font-size: 15px;
 	letter-spacing: 0.5px;

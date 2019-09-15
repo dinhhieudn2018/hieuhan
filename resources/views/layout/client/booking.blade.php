@@ -19,23 +19,40 @@
 			</ul>
 		</div>
 		<div class="bnr-rgt-w3-agile">
-			<form action="#" method="post">
+			<form action="{{ route('customer.store') }}" method="post">
+				@csrf
 				<div class="inputs-w3ls one">
-					<input type="text" name="Name" placeholder="Họ và tên" required="">
+					<input type="text" name="name" placeholder="Họ và tên">
+					@if($errors->has('name'))
+                        <div class="alert alert-danger">{{ $errors->first('name') }}</div>
+                    @endif
 				</div>
 				<div class="inputs-w3ls two">
-					<input type="email" name="Email" placeholder="Địa chỉ email" required="">
+					<input type="email" name="email" placeholder="Địa chỉ email">
+					@if($errors->has('email'))
+                        <div class="alert alert-danger">{{ $errors->first('email') }}</div>
+                    @endif
 				</div>
 				<div class="inputs-w3ls one">
-					<input type="text" name="Number" placeholder="Số điện thoại" required="">
+					<input type="text" name="phone" placeholder="Số điện thoại">
+					@if($errors->has('phone'))
+                        <div class="alert alert-danger">{{ $errors->first('phone') }}</div>
+                    @endif
 				</div>
 				<div class="inputs-w3ls two">
-					<input id="datepicker" name="Text" type="text" placeholder="Ngày hẹn" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd/mm/yyyy';}"
-					    required="">
+					{{-- <input id="datepicker" name="appointment_schedule" type="text" placeholder="Ngày hẹn" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd/mm/yyyy';}"
+					    required=""> --}}
+					<select name="appointment_schedule">
+						<option value="0">Chọn lịch hẹn</option>
+						<option value="11h - 12h">11h - 12h</option>
+                      	<option value="12h - 13h">12h - 13h</option>
+                      	<option value="17h - 18h">17h - 18h</option>
+                      	<option value="18h - 19h">18h - 19h</option>
+					</select>
 					<!-- <input type="text" name="booking" placeholder="Ngày hẹn" required=""> -->
 				</div>
 				<div class="inputs-w3ls">
-					<textarea name="Comments" placeholder="Tin nhắn" required=""></textarea>
+					<textarea name="message" placeholder="Tin nhắn"></textarea>
 				</div>
 				<input type="submit" value="Gửi">
 				<div class="clearfix"> </div>

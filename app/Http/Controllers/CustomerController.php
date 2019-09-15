@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
+use App\Models\Customer;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\CustomerRequest;
+use Carbon\Carbon;
 class CustomerController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::all();
+        return view('admin.customer.index',compact('customers'));
     }
 
     /**
@@ -33,9 +35,12 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CustomerRequest $request)
     {
-        //
+        //submit booking
+        $data = $request->all();
+        $customer = Customer::create($data);
+        return redirect()->route('/');
     }
 
     /**
@@ -55,9 +60,10 @@ class CustomerController extends Controller
      * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($id)
     {
-        //
+        $customer = Customer::find($id);
+        return view('admin.customer.edit',compact('customer'));
     }
 
     /**
@@ -67,9 +73,12 @@ class CustomerController extends Controller
      * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, $id)
     {
-        //
+        $customer = Customer::find($id);
+        $data = $request->all();
+        $customer->update($data);
+        return redirect()->route('customer.index');
     }
 
     /**
@@ -78,8 +87,9 @@ class CustomerController extends Controller
      * @param  \App\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy($id)
     {
-        //
+        $customer = Customer::find($id)->delete();
+        return redirect()->route('customer.index');
     }
 }
