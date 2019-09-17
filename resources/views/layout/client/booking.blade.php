@@ -1,21 +1,21 @@
-<div class="bnr-btm-w3layouts" id="appoint">
+<div class="bnr-btm-w3layouts" id="booking">
 		<div class="bnr-lft-agileits">
-			<h2>Yêu cầu một cuộc hẹn!</h2>
-			<p class="para-agileits-w3layouts">Chỉ cần một cuộc hẹn để nhận được sự giúp đỡ từ các chuyên gia của chúng tôi</p>
+			<h2>Đặt lịch hẹn ngay!</h2>
+			<p class="para-agileits-w3layouts">Nếu bạn gặp vấn đề về sức khỏe răng miệng, đừng ngần ngại liên hệ với chúng tôi</p>
 			<h3 class="subheading-agileits-w3layouts">Dịch vụ của chúng tôi</h3>
 			<ul>
 				<li>
-					<span class="fa fa-stethoscope" aria-hidden="true"></span>Root Canal</li>
+					<span class="fa fa-stethoscope" aria-hidden="true"></span>Răng sứ</li>
 				<li>
-					<span class="fa fa-user-md" aria-hidden="true"></span>Teeth Whitening</li>
+					<span class="fa fa-user-md" aria-hidden="true"></span>Nhổ răng</li>
 				<li>
-					<span class="fa fa-stethoscope" aria-hidden="true"></span>Wisdom Teeth</li>
+					<span class="fa fa-stethoscope" aria-hidden="true"></span>Trám răng</li>
 				<li>
-					<span class="fa fa-user-md" aria-hidden="true"></span>Crowns Bridges</li>
+					<span class="fa fa-user-md" aria-hidden="true"></span>Tẩy trắng răng</li>
 				<li>
-					<span class="fa fa-stethoscope" aria-hidden="true"></span>Cosmetic Dentis</li>
+					<span class="fa fa-stethoscope" aria-hidden="true"></span>Đính cườm đã</li>
 				<li>
-					<span class="fa fa-user-md" aria-hidden="true"></span>Dental Implants</li>
+					<span class="fa fa-user-md" aria-hidden="true"></span>Cạo vôi</li>
 			</ul>
 		</div>
 		<div class="bnr-rgt-w3-agile">

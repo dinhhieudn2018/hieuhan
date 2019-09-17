@@ -11,11 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout.client.master');
-})->name('/');
-
-Route::group(['prefix' => 'admin'], function(){
+// Route::get('/', function () {
+//     return view('layout.client.master');
+// })->name('/');
+Route::view('admin/login','admin.login')->name('login.admin');
+Route::post('admin-login','AdminController@loginAdmin')->name('admin-login');
+Route::get('logout','AdminController@logout');
+//Admin
+Route::group(['prefix' => 'admin', 'middleware' => 'AdminMiddleware'], function(){
 	// localhost/admin/...
 	Route::view('/','layout.admin.index')->name('admin.index');
 	Route::resource('service','ServiceController');
@@ -28,3 +31,6 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::get('imgdestroy/{id}',"ImageController@destroy")->name('img.destroy');
 	Route::get('cusdestroy/{id}',"CustomerController@destroy")->name('cus.destroy');
 });
+
+//Client
+Route::get('/','HomeController@index')->name('/');

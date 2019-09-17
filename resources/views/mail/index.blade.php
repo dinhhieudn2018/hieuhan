@@ -30,7 +30,7 @@
                                 </tr>
                                 <tr>
                                     <td align="left" valign="middle" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;padding:0 10px 20px 10px;line-height:17px">
-                                        Chào Quốc,
+                                        Chào {{ $customer->name }},
                                         <br> Cám ơn quý khách đã đặt lịch hẹn tại Nha Khoa Hiếu Hân
                                         <br>
                                         <br> Lịch hẹn của quý khách đang 
@@ -51,9 +51,9 @@
                                 <tr>
                                     <td colspan="2" align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#666666;padding:10px 10px 20px 15px;line-height:17px"> 
                                         <b>Lịch hẹn của bạn #</b> 
-                                        <a href="#" style="color:#ed2324;font-weight:bold;text-decoration:none" target="_blank">3237868995
+                                        <a href="#" style="color:#ed2324;font-weight:bold;text-decoration:none" target="_blank">
                                         </a>
-                                        <span style="font-size:12px">(15/09/2019)</span>
+                                        <span style="font-size:12px">{{ Carbon\Carbon::createFromTimestamp(strtotime($customer->created_at))->format('j-m-Y') }}</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -68,7 +68,7 @@
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-bottom:5px">:</td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-left:10px;padding-bottom:5px">
                                                          <a href="#" style="color:#115fff;text-decoration:none" target="_blank">
-                                                            Quốc kute
+                                                            {{ $customer->name }}
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -81,7 +81,7 @@
                                                         <a href="#" style="color:#115fff;text-decoration:none" target="_blank">
                                                             Dương Sơn Hòa Vang
                                                         </a>
-                                                        - 0905 005 840
+                                                        - 0905 050 824
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -90,7 +90,7 @@
                                                     </td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-bottom:5px">:</td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-left:10px;padding-bottom:5px">
-                                                        11h - 12h 
+                                                        {{ $customer->appointment_schedule }} 
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -99,9 +99,9 @@
                                                     </td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-bottom:5px">:</td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-left:10px;padding-bottom:5px"> 
-                                                        <b>Quốc</b> - 0703840572
-                                                        <br>
-                                                        Hòa Tiến 
+                                                        <b>{{ $customer->name }}</b> - {{ $customer->phone }}
+                                                        
+                                                       
                                                     </td>
                                                 </tr>
                                             </tbody>

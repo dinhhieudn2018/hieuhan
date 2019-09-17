@@ -59,7 +59,7 @@
 										<a href="#price-table" class="scroll">Bảng giá</a>
 									</li>
 									<li>
-										<a href="#team" class="scroll">Đặt hẹn - Tư vấn</a>
+										<a href="#booking" class="scroll">Đặt hẹn - Tư vấn</a>
 									</li>
 									<li>
 										<a href="#image" class="scroll">Hình ảnh</a>
@@ -82,9 +82,11 @@
 						<div class="slider_banner_info">
 							<div class="w3ls-info">
 								<h4>
-									<span>D</span>ental
-									<span>W</span>hitening</h4>
-								<p>We can improve your child's dental health.</p>
+									<span>T</span>ẩy
+									<span>Tr</span>ắng</h4>
+								<p>
+									Chúng tôi có thể cải thiện sức khỏe răng miệng của con bạn.
+								</p>
 							</div>
 						</div>
 					</li>
@@ -94,9 +96,9 @@
 						<div class="slider_banner_info">
 							<div class="w3ls-info">
 								<h4>
-									<span>R</span>oot
-									<span>T</span>reatment</h4>
-								<p>We are passionate about your child's oral health.</p>
+									<span>Đ</span>iều
+									<span>Trị</span> Tận Gốc</h4>
+								<p>Chúng tôi rất am hiểu sức khỏe răng miệng của con bạn.</p>
 							</div>
 						</div>
 					</li>
@@ -106,9 +108,9 @@
 						<div class="slider_banner_info">
 							<div class="w3ls-info">
 								<h4>
-									<span>D</span>ental
-									<span>I</span>mplant</h4>
-								<p>We can improve your child's dental health.</p>
+									<span>C</span>ác
+									<span>Dịch vụ</span>Khác</h4>
+								<p>Chúng tôi sẽ giúp bạn hài lòng.</p>
 							</div>
 						</div>
 					</li>

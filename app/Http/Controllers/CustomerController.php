@@ -6,6 +6,8 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Http\Requests\CustomerRequest;
 use Carbon\Carbon;
+use Mail;
+use App\Mail\ConfirmMail;
 class CustomerController extends Controller
 {
     /**
@@ -40,6 +42,7 @@ class CustomerController extends Controller
         //submit booking
         $data = $request->all();
         $customer = Customer::create($data);
+        Mail::to($customer->email)->send(new ConfirmMail($customer));
         return redirect()->route('/');
     }
 

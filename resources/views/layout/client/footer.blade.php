@@ -26,7 +26,7 @@
 					<div class="w3ls_footer_grid_leftr">
 						<h4>Email</h4>
 						<p>
-							<a href="mailto:info@example.com">info@example.com</a>
+							<a href="/">nhakhoahieuhandanang@gmail.com</a>
 						</p>
 					</div>
 					<div class="clearfix"> </div>
