@@ -14,7 +14,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $feedback = Feedback::all();
+        $feedback = Feedback::paginate(10);
         return view('admin.feedback.index',compact('feedback'));
     }
 
@@ -51,15 +51,15 @@ class FeedbackController extends Controller
                     $data['image'] = $file_name;
                     //dd($data);
                     Feedback::create($data);
-                    return redirect()->route('feedback.index');
+                    return redirect()->route('feedback.index')->with('success','Đã thêm dữ liệu thành công');
                 }
             }
             else{
-                return redirect()->back();
+                return redirect()->back()->with('error','Đã có lỗi vui lòng nhập lại');
             }
         }
         else{
-            return redirect()->back();
+            return redirect()->back()->with('error','Đã có lỗi vui lòng nhập lại');
         }
     }
 
@@ -122,7 +122,7 @@ class FeedbackController extends Controller
             $data['image'] = $feedback->image;
         }
         if($feedback->update($data)){
-            return redirect()->route('feedback.index');
+            return redirect()->route('feedback.index')->with('success','Đã cập nhật thành công');
         }
         
     }
@@ -136,6 +136,6 @@ class FeedbackController extends Controller
     public function destroy($id)
     {
         $feedback = Feedback::find($id)->delete();
-        return redirect()->route('feedback.index');
+        return redirect()->route('feedback.index')->with('success','Đã xóa thành công');
     }
 }

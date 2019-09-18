@@ -14,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::where('status',1)->get();
+        $services = Service::paginate(10);
         return view('admin.service.index',compact('services'));
     }
 
@@ -38,7 +38,7 @@ class ServiceController extends Controller
     {
         $data = $request->all();
         $services = Service::create($data);
-        return redirect()->route('service.index');
+        return redirect()->route('service.index')->with('success','Đã thêm dữ liệu thành công');
     }
 
     /**
@@ -76,7 +76,7 @@ class ServiceController extends Controller
         $service = Service::find($id);
         $data = $request->all();
         $service->update($data);
-        return redirect()->route('service.index');
+        return redirect()->route('service.index')->with('success','Đã cập nhật thành công');
     }
 
     /**
@@ -88,6 +88,6 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         $data = Service::find($id)->delete();
-        return redirect()->route('service.index');
+        return redirect()->route('service.index')->with('success','Đã xóa thành công');
     }
 }

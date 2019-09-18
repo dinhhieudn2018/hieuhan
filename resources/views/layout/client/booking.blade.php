@@ -48,6 +48,7 @@
                       	<option value="12h - 13h">12h - 13h</option>
                       	<option value="17h - 18h">17h - 18h</option>
                       	<option value="18h - 19h">18h - 19h</option>
+                      	<option value="T7 - CN cả ngày">T7 - CN cả ngày</option>
 					</select>
 					<!-- <input type="text" name="booking" placeholder="Ngày hẹn" required=""> -->
 				</div>

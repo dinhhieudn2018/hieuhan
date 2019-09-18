@@ -60,6 +60,7 @@
 
    
 </table>
+<div class="pull-right">{{ $feedback->links() }}</div>
        </div>
     </div>
 @endsection

@@ -46,3 +46,14 @@
 <script type="text/javascript">
     CKEDITOR.replace('demo');
 </script>
+<script type="text/javascript" src="assets/client/js/toastr.min.js"></script>
+@if(session('success'))
+  <script type="text/javascript">
+    toastr.success('{{ session('success') }}', 'Thông báo', {timeOut: 5000});
+  </script>
+ @endif
+ @if(session('error'))
+  <script type="text/javascript">
+    toastr.error('{{ session('error') }}', 'Thông báo', {timeOut: 5000});
+  </script>
+  @endif

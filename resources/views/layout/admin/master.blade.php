@@ -39,6 +39,7 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="assets/admin/dist/css/Source-Sans-Pro.css">
   <link rel="shortcut icon"  href="assets/admin/dist/img/icon.png">
+  <link rel="stylesheet" type="text/css" href="assets/client/css/toastr.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">

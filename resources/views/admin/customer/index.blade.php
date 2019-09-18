@@ -63,6 +63,7 @@
 
    
 </table>
+<div class="pull-right">{{ $customers->links() }}</div>
        </div>
     </div>
 @endsection

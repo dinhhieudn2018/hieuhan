@@ -14,7 +14,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images = Image::all();
+        $images = Image::paginate(10);
         return view('admin.image.index',compact('images'));
     }
 
@@ -51,15 +51,15 @@ class ImageController extends Controller
                     $data['image'] = $file_name;
                     //dd($data);
                     Image::create($data);
-                    return redirect()->route('image.index');
+                    return redirect()->route('image.index')->with('success','Đã thêm dữ liệu thành công');
                 }
             }
             else{
-                return redirect()->back();
+                return redirect()->back()->with('error','Đã có lỗi vui lòng nhập lại');
             }
         }
         else{
-            return redirect()->back();
+            return redirect()->back()->with('error','Đã có lỗi vui lòng nhập lại');
         }
     }
 
@@ -116,13 +116,13 @@ class ImageController extends Controller
                 }
             }
             else{
-                return redirect()->back();
+                return redirect()->back()->with('error','Đã có lỗi vui lòng nhập lại');
             }
         }else{
             $data['image'] = $image->image;
         }
         if($image->update($data)){
-            return redirect()->route('image.index');
+            return redirect()->route('image.index')->with('success','Đã cập nhật thành công');
         }
     }
 
@@ -135,6 +135,6 @@ class ImageController extends Controller
     public function destroy($id)
     {
         $img = Image::find($id)->delete();
-        return redirect()->route('image.index');
+        return redirect()->route('image.index')->with('success','Đã xóa thành công');
     }
 }

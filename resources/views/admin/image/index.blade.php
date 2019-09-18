@@ -57,6 +57,7 @@
 
    
 </table>
+<div class="pull-right">{{ $images->links() }}</div>
        </div>
     </div>
 @endsection

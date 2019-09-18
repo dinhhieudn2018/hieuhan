@@ -17,7 +17,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all();
+        $customers = Customer::paginate(10);
         return view('admin.customer.index',compact('customers'));
     }
 
@@ -43,7 +43,7 @@ class CustomerController extends Controller
         $data = $request->all();
         $customer = Customer::create($data);
         Mail::to($customer->email)->send(new ConfirmMail($customer));
-        return redirect()->route('/');
+        return redirect()->route('/')->with('success','Quý khách đã đặt lịch hẹn thành công');
     }
 
     /**
@@ -81,7 +81,7 @@ class CustomerController extends Controller
         $customer = Customer::find($id);
         $data = $request->all();
         $customer->update($data);
-        return redirect()->route('customer.index');
+        return redirect()->route('customer.index')->with('success','Đã cập nhật thành công');
     }
 
     /**
@@ -93,6 +93,6 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         $customer = Customer::find($id)->delete();
-        return redirect()->route('customer.index');
+        return redirect()->route('customer.index')->with('success','Đã xóa thành công');
     }
 }

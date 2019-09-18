@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Admin</title>
+    <title>Admin Login</title>
 
     <!-- Scripts -->
     <script src="js/app.js" defer></script>

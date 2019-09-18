@@ -9,7 +9,7 @@
 	<div class="container" style="padding-top: 30px;width: 100%">
        
        <div id="content" class="table-responsive">
-            <table class="table table-bordered table-hover">
+  <table class="table table-bordered table-hover">
    <thead>
       <tr style="background-color: #3c8dbc;color:white;">
         <th class="text-center">STT</th>
@@ -55,6 +55,7 @@
 
    
 </table>
+<div class="pull-right">{{ $services->links() }}</div>
        </div>
     </div>
 @endsection

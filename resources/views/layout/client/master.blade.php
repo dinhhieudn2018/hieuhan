@@ -20,6 +20,7 @@
 	<link href="assets/client/css/font-Oswald.css" rel="stylesheet">
 	<link href="assets/client/css/Open-Sans.css" rel="stylesheet">
 	<link rel="shortcut icon" href="assets/client/images/favicon.jpg">
+	<link rel="stylesheet" type="text/css" href="assets/client/css/toastr.min.css">
 	<!--//Online-fonts-->
 </head>
 
