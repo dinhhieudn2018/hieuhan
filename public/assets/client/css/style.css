@@ -914,6 +914,7 @@ button.close {
 
 .bnr-rgt-w3-agile input[type="text"],
 .bnr-rgt-w3-agile input[type="email"],
+.bnr-rgt-w3-agile input[type="date"],
 .bnr-rgt-w3-agile textarea,
 .bnr-rgt-w3-agile select{
 	outline: none;
@@ -950,7 +951,7 @@ button.close {
 }
 
 .bnr-rgt-w3-agile input[type="submit"]:hover {
-	background: #e64b50;
+	background: #4078c0;
 	transition: 0.5s ease-in;
 	-webkit-transition: 0.5s ease-in;
 	-moz-transition: 0.5s ease-in;

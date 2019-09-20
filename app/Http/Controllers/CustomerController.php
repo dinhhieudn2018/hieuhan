@@ -39,11 +39,7 @@ class CustomerController extends Controller
      */
     public function store(CustomerRequest $request)
     {
-        //submit booking
-        $data = $request->all();
-        $customer = Customer::create($data);
-        Mail::to($customer->email)->send(new ConfirmMail($customer));
-        return redirect()->route('/')->with('success','Quý khách đã đặt lịch hẹn thành công');
+        
     }
 
     /**
@@ -94,5 +90,13 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($id)->delete();
         return redirect()->route('customer.index')->with('success','Đã xóa thành công');
+    }
+
+    public function booking(CustomerRequest $request){
+        //submit booking
+        $data = $request->all();
+        $customer = Customer::create($data);
+        Mail::to($customer->email)->send(new ConfirmMail($customer));
+        return redirect()->route('/')->with('success','Quý khách đã đặt lịch hẹn thành công');
     }
 }

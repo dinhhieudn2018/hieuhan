@@ -9,7 +9,7 @@ class Customer extends Model
     protected $table = 'customers';
 
     protected $fillable = [
-    	'name', 'email', 'phone', 'appointment_schedule', 'message', 'status',
+    	'name', 'email', 'phone', 'address', 'date', 'appointment_schedule', 'message', 'status',
     ];
 
     public function feedback(){

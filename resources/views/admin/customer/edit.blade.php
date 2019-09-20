@@ -42,6 +42,12 @@
            </div>
            <div class="col-md-4">
                <div class="form-group">
+                  <label>Địa chỉ</label>
+                  <input class="form-control" type="text" name="address"  value="{{ $customer->address }}">
+               </div>
+           </div>
+           <div class="col-md-4">
+               <div class="form-group">
                   <label>Lịch hẹn</label>
                   <input class="form-control" type="text" name="appointment_schedule"  value="{{ $customer->appointment_schedule }}">
                </div>
@@ -54,8 +60,8 @@
            </div>
            <div class="col-md-4">
                <div class="form-group">
-                  <label>Ngày tạo</label>
-                  <input class="form-control" type="text" name="created_at"  value="{{ Carbon\Carbon::createFromTimestamp(strtotime($customer->created_at))->format('j-m-Y') }}" disabled="">
+                  <label>Ngày đặt</label>
+                  <input class="form-control" type="text" name="created_at"  value="{{ Carbon\Carbon::createFromTimestamp(strtotime($customer->date))->format('j-m-Y') }}" disabled="">
                </div>
            </div>
            <div class="col-md-4">

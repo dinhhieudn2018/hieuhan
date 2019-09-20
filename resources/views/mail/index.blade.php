@@ -74,14 +74,14 @@
                                                 </tr>
                                                 <tr>
                                                     <td align="left" valign="top" style="width:120px;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;padding-left:15px;padding-right:10px;line-height:20px;padding-bottom:5px"> 
-                                                        <b>Nha Khoa Hiếu Hân</b>
+                                                        <b>Địa chỉ</b>
                                                     </td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-bottom:5px">:</td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-left:10px;padding-bottom:5px"> 
                                                         <a href="#" style="color:#115fff;text-decoration:none" target="_blank">
-                                                            Dương Sơn Hòa Vang
+                                                            {{ $customer->address }}
                                                         </a>
-                                                        - 0905 050 824
+                                                        
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -90,7 +90,9 @@
                                                     </td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-bottom:5px">:</td>
                                                     <td align="left" valign="top" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#666666;line-height:20px;padding-left:10px;padding-bottom:5px">
+                                                        {{ Carbon\Carbon::createFromTimestamp(strtotime($customer->date))->format('j-m-Y') }} -- 
                                                         {{ $customer->appointment_schedule }} 
+                                                        
                                                     </td>
                                                 </tr>
                                                 <tr>

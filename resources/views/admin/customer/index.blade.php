@@ -16,8 +16,9 @@
         <th class="text-center">Tên khách hàng</th>
         <th class="text-center">Email</th>
         <th class="text-center">Số điện thoại</th>
+        <th class="text-center">Địa chỉ</th>
         <th class="text-center">Lịch hẹn</th>
-        <th class="text-center">Ngày tạo</th>
+        <th class="text-center">Ngày đặt</th>
         <th class="text-center">Tin nhắn</th>
         <th class="text-center">Tình trạng</th>
         
@@ -35,8 +36,9 @@
         <td class="text-center">{{ $value->name }}</td>
         <td class="text-center">{{ $value->email }}</td>
         <td class="text-center">{{ $value->phone }}</td>
+        <td class="text-center">{{ $value->address }}</td>
         <td class="text-center">{{ $value->appointment_schedule }}</td>
-        <td class="text-center">{{ Carbon\Carbon::createFromTimestamp(strtotime($value->created_at))->format('j-m-Y') }}</td>
+        <td class="text-center">{{ Carbon\Carbon::createFromTimestamp(strtotime($value->date))->format('j-m-Y') }}</td>
         <td class="text-center">{{ $value->message }}</td>
         <td class="text-center">
           @if($value->status == 0)

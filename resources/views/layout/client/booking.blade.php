@@ -19,7 +19,7 @@
 			</ul>
 		</div>
 		<div class="bnr-rgt-w3-agile">
-			<form action="{{ route('customer.store') }}" method="post">
+			<form action="{{ route('customer.booking') }}" method="post">
 				@csrf
 				<div class="inputs-w3ls one">
 					<input type="text" name="name" placeholder="Họ và tên">
@@ -40,10 +40,23 @@
                     @endif
 				</div>
 				<div class="inputs-w3ls two">
+					<input type="text" name="address" placeholder="Địa chỉ">
+					@if($errors->has('address'))
+                        <div class="alert alert-danger">{{ $errors->first('address') }}</div>
+                    @endif
+				</div>
+				<div class="inputs-w3ls one">
 					{{-- <input id="datepicker" name="appointment_schedule" type="text" placeholder="Ngày hẹn" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd/mm/yyyy';}"
 					    required=""> --}}
+					<input placeholder="Ngày đặt lịch" type="text" onfocus="(this.type='date')" name="date" >
+					@if($errors->has('date'))
+                        <div class="alert alert-danger">{{ $errors->first('date') }}</div>
+                    @endif
+				</div>
+				<div class="inputs-w3ls two">
+					
 					<select name="appointment_schedule">
-						<option value="0">Chọn lịch hẹn</option>
+						<option value="0">Chọn khung giờ</option>
 						<option value="11h - 12h">11h - 12h</option>
                       	<option value="12h - 13h">12h - 13h</option>
                       	<option value="17h - 18h">17h - 18h</option>
@@ -53,7 +66,7 @@
 					<!-- <input type="text" name="booking" placeholder="Ngày hẹn" required=""> -->
 				</div>
 				<div class="inputs-w3ls">
-					<textarea name="message" placeholder="Tin nhắn"></textarea>
+					<textarea name="message" placeholder="Ghi chú, ví dụ: tôi muốn đến vào 8h - 9h sáng thứ 7 "></textarea>
 				</div>
 				<input type="submit" value="Gửi">
 				<div class="clearfix"> </div>

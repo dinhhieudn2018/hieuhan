@@ -25,7 +25,7 @@
 						<li>
 							<span class="fa fa-phone" aria-hidden="true"></span>0905 050 824</li>
 						<li>
-							<span class="fa fa-clock-o" aria-hidden="true"></span>( Mon-Fri 9am - 8pm ) ( Sat-Sun 10am - 6pm )</li>
+							<span class="fa fa-clock-o" aria-hidden="true"></span>( Thứ 2 - Thứ 6 17h - 19h ) ( Thứ 7 - CN 7h - 18h )</li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -83,7 +83,7 @@
 							<div class="w3ls-info">
 								<h4>
 									<span>T</span>ẩy
-									<span>Tr</span>ắng</h4>
+									<span>T</span>rắng</h4>
 								<p>
 									Chúng tôi có thể cải thiện sức khỏe răng miệng của con bạn.
 								</p>
@@ -97,7 +97,7 @@
 							<div class="w3ls-info">
 								<h4>
 									<span>Đ</span>iều
-									<span>Trị</span> Tận Gốc</h4>
+									<span>T</span>rị tận gốc</h4>
 								<p>Chúng tôi rất am hiểu sức khỏe răng miệng của con bạn.</p>
 							</div>
 						</div>
@@ -109,7 +109,7 @@
 							<div class="w3ls-info">
 								<h4>
 									<span>C</span>ác
-									<span>Dịch vụ</span>Khác</h4>
+									<span>D</span>ịch vụ khác</h4>
 								<p>Chúng tôi sẽ giúp bạn hài lòng.</p>
 							</div>
 						</div>

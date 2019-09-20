@@ -34,3 +34,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'AdminMiddleware'], function(
 
 //Client
 Route::get('/','HomeController@index')->name('/');
+Route::post('booking','CustomerController@booking')->name('customer.booking');

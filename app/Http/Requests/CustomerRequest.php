@@ -27,6 +27,8 @@ class CustomerRequest extends FormRequest
             'name'  => 'required|min:3|max:20',
             'email' => 'required|email',
             'phone' => 'required|numeric',
+            'address' => 'required',
+            'date'    => 'required',
         ];
     }
     public function messages() {
@@ -37,7 +39,9 @@ class CustomerRequest extends FormRequest
             'email.required'  => 'Vui lòng nhập email',
             'email.email'     => 'Email không đúng định dạng',
             'phone.required'  => 'Vui lòng nhập số điện thoại',
-            'name.numeric'    => 'Vui lòng nhập đúng số',
+            'phone.numeric'   => 'Vui lòng nhập đúng số điện thoại',
+            'address.required' => 'Vui lòng nhập địa chỉ',
+            'date.required'    => 'Vui lòng nhập ngày đặt lịch',
         ];
     }
 }
