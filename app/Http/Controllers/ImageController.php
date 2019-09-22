@@ -55,11 +55,11 @@ class ImageController extends Controller
                 }
             }
             else{
-                return redirect()->back()->with('error','Đã có lỗi vui lòng nhập lại');
+                return redirect()->back()->with('error','Vui lòng chọn đúng định dạng file ảnh: png, jpg, jpeg, gif');
             }
         }
         else{
-            return redirect()->back()->with('error','Đã có lỗi vui lòng nhập lại');
+            return redirect()->back()->with('error','Vui lòng chọn ảnh');
         }
     }
 
@@ -116,7 +116,7 @@ class ImageController extends Controller
                 }
             }
             else{
-                return redirect()->back()->with('error','Đã có lỗi vui lòng nhập lại');
+                return redirect()->back()->with('error','Vui lòng chọn đúng định dạng file ảnh: png, jpg, jpeg, gif');
             }
         }else{
             $data['image'] = $image->image;

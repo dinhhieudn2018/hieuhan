@@ -41,7 +41,7 @@
                 <div class="form-group">
                     <label for="image">Hình ảnh</label>
                     <input type="file" name="image"  class="form-control">
-                    <img src="upload/img/apple.png" style="width: 100px; height: 100px">
+                   {{--  <img src="upload/img/apple.png" style="width: 100px; height: 100px"> --}}
                 </div> 
             </div>
             <div class="col-md-6">
